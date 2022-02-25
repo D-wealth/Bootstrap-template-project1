@@ -1,0 +1,42 @@
+<style>
+    html{
+        background-color: rgb(175, 175, 119);
+    }
+
+    h2{
+            color: red;
+            
+        }
+    .reg{
+        text-align: center;
+        margin-top: 5%;
+    }
+
+</style>
+
+{% for message in messages %}
+<h2>{{message}}</h2>
+{% endfor %}
+
+<form action="register" method="post">
+    {% csrf_token %}
+    <div class="reg"><p>Username:</p>
+    <input type="text" name="username" id=""/>
+    <br>
+
+    <p>Email:</p>
+    <input type="email" name="email" id="">
+    <br>
+
+    <p>Password:</p>
+    <input type="password" name="password" id="">
+    <br>
+
+    <p>Repeat password:</p>
+    <input type="password" name="password2" id="">
+    <br>
+    <br>
+    <input type="submit" value="Register">
+
+    </div>
+</form>
